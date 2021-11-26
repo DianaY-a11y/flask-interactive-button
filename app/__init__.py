@@ -30,7 +30,7 @@ def create_app():
     db.init_app(app)  # initialize Flask SQLALchemy with this flask app
     Migrate(app, db)
 
-    from app.views import main
+    from app.routes import main
 
     # why blueprints http://flask.pocoo.org/docs/1.0/blueprints/
     app.register_blueprint(main.main)
