@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Quoted
+{% endblock %}
+
+{% block main %}
+<p>
+    A share of {{quote.name}} ({{quote.symbol}}) is priced at {{usd_convert(quote.price)}}.
+</p>
+    
+{% endblock %}

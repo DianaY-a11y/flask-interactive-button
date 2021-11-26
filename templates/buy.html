@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block title %}
+Buy
+{% endblock %}
+
+{% block main %}
+
+{% if bought: %}
+    <div style="margin-bottom: 30px;">Bought!</div>
+{% endif %}
+
+<form action="/buy" method="post">
+    <div class="mb-3">
+        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="symbol" Placeholder="Symbol" type="text">
+        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="shares" Placeholder="Shares" type="text">
+    </div>
+    <button class="btn btn-primary" type="submit">Buy # of Shares</button>
+</form>
+{% endblock %} 

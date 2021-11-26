@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block main %}
+<table class="table">
+    <tr>
+      <th>Symbol</th>
+      <th>Name</th>
+      <th>Shares</th>
+      <th>Price</th>
+      <th>TOTAL</th>
+    </tr>
+    {% for stock in stocks %}
+        <tr>
+        <td>{{ stock.symbol }}</td>
+        <td>{{ stock.name }}</td>
+        <td>{{ stock.volume }}</td>
+        <td>{{ stock.price }}</td>
+        <td>{{ stock.total }}</td>
+        </tr>
+    {% endfor %}
+  </table>
+
+  <div style="display: flex; flex-direction: column; align-items: flex-end; width: 100%;">
+    <p><strong>Cash</strong> {{ balance }}</p>
+    <p><strong>TOTAL</strong> {{ net_worth }}</p>
+  </div>
+
+  {% endblock %}
