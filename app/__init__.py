@@ -20,6 +20,7 @@ def create_app():
     app = Flask(__name__)
     CORS(app)  # add CORS
     app.config['SQLALCHEMY_DATABASE_URI'] = db_url
+    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     
     if not database_exists(db_url):
         create_database(db_url)

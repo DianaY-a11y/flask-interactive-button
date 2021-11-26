@@ -5,5 +5,5 @@ from sqlalchemy import inspect
 main = Blueprint("main", __name__)  # initialize blueprint
 
 @main.route("/")
-def index():
+def index(): 
     return render_template("index.html")
