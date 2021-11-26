@@ -5,10 +5,13 @@ Register
 {% endblock %}
 
 {% block main %}
-<form action="/register" method="post">
+<form action="/register" method="POST">
     <div class="mb-3">
-        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="username"
-            placeholder="Username" type="text">
+        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="name"
+            placeholder="Diana Yue" type="text">
+    </div>
+    <div class="mb-3">
+        <input class="form-control mx-auto w-auto" name="phone" placeholder="Phone" type="text">
     </div>
     <div class="mb-3">
         <input class="form-control mx-auto w-auto" name="password" placeholder="Password" type="password">
