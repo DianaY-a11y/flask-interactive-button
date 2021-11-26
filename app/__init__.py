@@ -16,12 +16,11 @@ class RequestFormatter(logging.Formatter):
 
 
 def create_app():
-
-    app = Flask(__name__)
-
-    CORS(app)  # add CORS
-
     db_url = 'sqlite:///main.db'
+    app = Flask(__name__)
+    CORS(app)  # add CORS
+    app.config['SQLALCHEMY_DATABASE_URI'] = db_url
+    
     if not database_exists(db_url):
         create_database(db_url)
 
