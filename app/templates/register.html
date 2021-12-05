@@ -8,7 +8,7 @@ Register
 <form action="/register" method="POST">
     <div class="mb-3">
         <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="name"
-            placeholder="Diana Yue" type="text">
+            placeholder="Name" type="text">
     </div>
     <div class="mb-3">
         <input class="form-control mx-auto w-auto" name="phone" placeholder="Phone" type="text">
@@ -20,5 +20,8 @@ Register
         <input class="form-control mx-auto w-auto" name="confirmation" placeholder="Confirmation" type="password">
     </div>
     <button class="btn btn-primary" type="submit">Register</button>
+    <div>
+        <h6><a href = localhost:5000/login>Already have an account?</a></h5>
+    </div>
 </form>
 {% endblock %}
