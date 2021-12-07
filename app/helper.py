@@ -10,7 +10,7 @@ def apology(message, code=400):
     """Render message as an apology to user."""
     def escape(s):
         """
-        Escape special characters.
+        Escape special characters
 
         https://github.com/jacebrowning/memegen#special-characters
         """
