@@ -5,13 +5,23 @@
 {% endblock %}
 
 {% block main %}
-    <form action="/login" method="POST">
-        <div class="mb-3">
-            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="username" name="phone" placeholder="Phone Number" type="text">
-        </div>
-        <div class="mb-3">
-            <input class="form-control mx-auto w-auto" id="password" name="password" placeholder="Password" type="password">
-        </div>
-        <button class="btn btn-primary" type="submit">Log In</button>
-    </form>
+<div id = "circle-login1"></div>
+<div class="main-container">
+    <div id="login-container">
+        <form action="/login" method="POST">
+            <h1 style="margin-bottom: 15px;">Welcome Back</h1>
+            <div class="mb-3">
+                <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="username" name="phone" placeholder="Phone Number" type="text">
+            </div>
+            <div class="mb-3">
+                <input class="form-control mx-auto w-auto" id="password" name="password" placeholder="Password" type="password">
+            </div>
+            <button class="btn btn-primary" type="submit" id="login-button">Log In</button>
+            <div style="margin-top: 20px;">
+                <h6><a href = "/register" >Don't have an account?</a></h6>
+            </div>
+        </form>
+    </div>
+</div>
+<div id = "circle-login2"></div>
 {% endblock %}

@@ -1,23 +1,24 @@
-from flask import Blueprint, flash, redirect, render_template, request, session
-from sqlalchemy.orm import clear_mappers
-from app.models import db, User
-from sqlalchemy import inspect
-from app.helper import apology, login_required
-from werkzeug.security import check_password_hash, generate_password_hash
-from twilio.rest import Client
 import json
-from tkinter import * 
-from tkinter.ttk import *
+
+from app.helper import apology, login_required
+from app.models import User, db
+from flask import Blueprint, flash, redirect, render_template, request, session
+from sqlalchemy import inspect
+from sqlalchemy.orm import clear_mappers
+from twilio.rest import Client
+from werkzeug.security import check_password_hash, generate_password_hash
 
 main = Blueprint("main", __name__)  # initialize blueprint
 
 @main.route("/")
 def index(): 
-    return render_template("index.html")
+    if not session.get("user_id"):
+        return render_template("index.html")
+    return redirect('/message')
 
 @main.route("/message", methods=["GET","POST"])
+@login_required
 def message():
-    session.clear()
     if request.method == "POST":
         if not request.form.get("recipient_phone"):
             return apology("must provide phone number")
@@ -98,4 +99,10 @@ def register():
     else: 
         return render_template("register.html")
 
+@main.route("/logout")
+def logout():
+    """Log user out"""
+    # Forget any user_id
+    session.clear()
+    return redirect("/")
 

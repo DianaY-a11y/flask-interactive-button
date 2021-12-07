@@ -5,23 +5,32 @@ Register
 {% endblock %}
 
 {% block main %}
-<form action="/register" method="POST">
-    <div class="mb-3">
-        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="name"
-            placeholder="Name" type="text">
+
+<div id = "circle-login1"></div>
+<div id = "circle-login2"></div>
+<div class="main-container">
+    <div id="login-container">
+        <form action="/register" method="POST">
+            <h1 style="margin-bottom: 15px;">Create an Account</h1>
+            <div class="mb-3">
+                <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="name"
+                    placeholder="Name" type="text">
+            </div>
+            <div class="mb-3">
+                <input class="form-control mx-auto w-auto" name="phone" placeholder="Phone" type="text">
+            </div>
+            <div class="mb-3">
+                <input class="form-control mx-auto w-auto" name="password" placeholder="Password" type="password">
+            </div>
+            <div class="mb-3">
+                <input class="form-control mx-auto w-auto" name="confirmation" placeholder="Confirmation" type="password">
+            </div>
+            <button class="btn btn-primary" type="submit" id="login-button">Register</button>
+            <div style="margin-top: 20px;">
+                <h6><a href = "/login" >Already have an account?</a></h5>
+            </div>
+
+        </form>
     </div>
-    <div class="mb-3">
-        <input class="form-control mx-auto w-auto" name="phone" placeholder="Phone" type="text">
-    </div>
-    <div class="mb-3">
-        <input class="form-control mx-auto w-auto" name="password" placeholder="Password" type="password">
-    </div>
-    <div class="mb-3">
-        <input class="form-control mx-auto w-auto" name="confirmation" placeholder="Confirmation" type="password">
-    </div>
-    <button class="btn btn-primary" type="submit">Register</button>
-    <div>
-        <h6><a href = localhost:5000/login>Already have an account?</a></h5>
-    </div>
-</form>
+</div>
 {% endblock %}

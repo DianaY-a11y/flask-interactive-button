@@ -5,20 +5,26 @@ Home
 {% endblock %}
 
 {% block main %}
-
 <head>
-    <meta charset = "UTF-8">
-    <title><h1>Welcome to Button!</h1></title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, width=device-width">
 </head>
-<body>
-    <section>
-        <header>
-            <a href = "#" class ="logo">img scr = </a>
-        </header>
-    </section>
-</body>
 
-<h1>Welcome to Button!</h1>
+<div id="home-container">
+    <div id="home-text">
+        <h2>They know what you mean <br> Use <span> Button </span> </h2>
+        <p> Button is the newest webapp where you can send short messages
+            to your friends and family. With our loved ones, not many words
+            are needed. Sometimes we just want to send a simple "hey" or 
+            "what's up" or "😘" to let them know they're on our minds. Sign 
+            up for an account on the top right to try out more! 
+        </p>
+    </div>
+        <div id="home-image">
+            <img id="image-phone" src="{{ url_for('static', filename='images/love-message.png') }}">
+        </div>
+    </div>
+    <div id = "circle"></div>
+</div>
 
 {% endblock %}

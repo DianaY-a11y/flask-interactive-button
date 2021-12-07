@@ -1,9 +1,9 @@
 import os
-import urllib.parse
-from functools import wraps
-
 import requests
+import urllib.parse
+
 from flask import redirect, render_template, request, session
+from functools import wraps
 
 
 def apology(message, code=400):
@@ -33,5 +33,3 @@ def login_required(f):
             return redirect("/login")
         return f(*args, **kwargs)
     return decorated_function
-
-

@@ -10,7 +10,12 @@ Send Message
     <meta name="viewport" content="width=device-width, initial scale=1.0">
     <title>Send Nessage</title>
     <script>
-
+        function charcountupdate(str){
+            var lng = str.length;
+            document.getElementById("charcount").innerHTML = lng +' out of 100 characters';
+        }        
+    </script>
+    <script>
         function toggleImg(x) {
             if(x.src.includes('button.png')) {
                 x.src = "{{ url_for('static', filename='images/button_pressed.png') }}"
@@ -18,12 +23,11 @@ Send Message
                 x.src = "{{ url_for('static', filename='images/button.png') }}"
             }
         }
-       
     </script>
 </head>
 <body>
     <section>
-        <div class = "container">
+        <div class = "box">
             <form action="/message" method="POST">
 
                 <div class="form-group">
@@ -33,13 +37,16 @@ Send Message
 
                 <div class="form-group">
                     <label for = "message"> Message </label>
-                    <textarea name="message" id="message" cols="30" rows="10"></textarea>
+                    <textarea name="message" id="message" placeholder="max. 100 characters" maxlength = "100" onekeyup="charcountupdate(this.value)" cols="30" rows="10"></textarea>
                 </div>
+                <h5 id = "charcount"> words left</h5>
 
 
-                <button type="submit" style="height: 100px; width: 100px; padding: 0; border: none; background: none;">
-                    <img style="height: 100px; width: 100px;" src="{{ url_for('static', filename='images/button.png') }}" onmouseenter="toggleImg(this)" onmouseout="toggleImg(this)">
-                </button>
+                <span id="button">
+                    <button type="submit" style="height: 100px; width: 100px; padding: 0; border: none; background: none;">
+                        <img style="height: 200px; width: 200px;" src="{{ url_for('static', filename='images/button.png') }}" onmouseenter="toggleImg(this)" onmouseout="toggleImg(this)">
+                    </button>
+                </span> 
             </form>
         </div>
     </section>

@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+nav {
+    position: absolute;
+    z-index: 9999;
+}
+
 /* Size for brand */
 nav .navbar-brand {
     font-size: xx-large;
@@ -28,17 +33,22 @@ nav .navbar-brand .green {
 
 section {
     height: 100vh;
-    width: 70%;
+    width: 100%;
     background-color:rgb(241, 223, 241);
     display: flex;
     align-items: center;
     justify-content: center;
+    background-position-x: center;
+    background-position-y: center;
 }
-
-.container
+.box
 {
     width: 50%;
     max-width: 500px;
+    height: 70%;
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
     margin: 20px;
     padding: 20px;
     box-shadow: 0px 0px 20px #00000010;
@@ -52,10 +62,22 @@ section {
     width: 100%;
     margin-top: 20px; 
     font-size: 20px;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+
+#recipient_phone{
+    margin-left: 10px;
+}
+
+#message{
+    margin-left: 10px;
 }
 
 .label{
     width:100%;
+    margin-right: 5px;
 }
 
 .form-group input
@@ -71,3 +93,146 @@ textarea{
     resize: vertical;
 }
 
+.content{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.content .text1{
+    position: relative;
+    max-width: 600px;
+}
+
+.content .text1 h2{
+    color: #333;
+    font-size: 4em;
+    line-height: 1.4em;
+    font-weight: 500;
+}
+
+.content .text1 h2 span{
+    color: rgb(241, 153, 241);
+    font-size: 1.2em;
+    font-weight: 900;
+
+}
+
+.content .imgBox{
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 50px;
+    margin-top: 50px;
+}
+
+.circle{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(241, 223, 241);
+    clip-path: circle(800px at right);
+}
+
+#home-container {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#home-text {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px;
+}
+
+#home-text h2{
+    font-size: 55px;
+}
+
+#home-text span{
+    font-size: 65px;
+    color:rgb(241, 153, 241);
+}
+
+#home-text p{
+    font-size: 25px;
+    margin-top: 20px;
+}
+#home-image {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+
+}
+
+.main-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: calc(100vh - 80px);
+    overflow: hidden;
+    position: relative;
+}
+
+#image-phone{
+    width: 75%;
+    height: 75%;
+    object-fit: fill;
+}
+
+#login-container {
+    margin-top: 50px;
+    width: 40%;
+    border:rgba(128, 128, 128, 0.199);
+    border-radius: 15px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#login-button {
+    width: 100%;
+}
+
+#circle-login1{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(241, 223, 241);
+    clip-path: circle(39.1% at 96% 70%);
+}
+
+#circle-login2{
+    position: absolute;
+    bottom: 47%;
+    width: 100%;
+    height: 50%;
+    background: rgb(241, 223, 241);
+    clip-path: circle(39.1% at 5% -40%);
+}
+
+#button{
+    display: flex;
+    justify-content: center;
+}
