@@ -26,10 +26,10 @@ def message():
              return apology("must provide a message")
 
         twilio_sid = "AC7e0d1d4fc254d789473b7f8229ffa74e"
-        twilio_secret = "fd26b688d7108fdb71620b593e9e9df2"        
+        twilio_secret = "6350511dc5f11c56fcc24d77d53ae36a"        
         client = Client(twilio_sid, twilio_secret)
 
-        my_phone = +17313180503
+        my_phone = '+17313180503'
         recipient_phone = request.form.get("recipient_phone")
         send_sms = request.form.get("message")
         client.messages.create(body=send_sms,from_=my_phone, to=recipient_phone)

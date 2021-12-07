@@ -31,7 +31,7 @@ Send Message
             <form action="/message" method="POST">
 
                 <div class="form-group">
-                    <label for = "recipient_phone"> Phone Number</label>
+                    <label for="recipient_phone"> Phone Number</label>
                     <input type="text" id="recipient_phone" name="recipient_phone">
                 </div>
 
@@ -39,14 +39,14 @@ Send Message
                     <label for = "message"> Message </label>
                     <textarea name="message" id="message" placeholder="max. 100 characters" maxlength = "100" onekeyup="charcountupdate(this.value)" cols="30" rows="10"></textarea>
                 </div>
-                <h5 id = "charcount"> words left</h5>
-
-
-                <span id="button">
-                    <button type="submit" style="height: 100px; width: 100px; padding: 0; border: none; background: none;">
+                <div id="charcount-container">
+                    <h5 id = "charcount"> words left</h5>
+                </div>
+                <div id="message-button">
+                    <button type="submit" style="height: 200px; width: 200px; padding: 0; border: none; background: none;">
                         <img style="height: 200px; width: 200px;" src="{{ url_for('static', filename='images/button.png') }}" onmouseenter="toggleImg(this)" onmouseout="toggleImg(this)">
                     </button>
-                </span> 
+                </div> 
             </form>
         </div>
     </section>

@@ -32,47 +32,56 @@ nav .navbar-brand .green {
 }
 
 section {
-    height: 100vh;
+    height: 95vh;
     width: 100%;
     background-color:rgb(241, 223, 241);
     display: flex;
     align-items: center;
     justify-content: center;
-    background-position-x: center;
-    background-position-y: center;
 }
-.box
-{
-    width: 50%;
-    max-width: 500px;
-    height: 70%;
-    display: flex;
-    justify-content:flex-start;
-    align-items: center;
-    margin: 20px;
+
+.box {
+    background-color: whitesmoke;
     padding: 20px;
-    box-shadow: 0px 0px 20px #00000010;
-    background-color: white;
-    border-radius: 10px;
-    margin-bottom: 20px;
+    border-radius: 20px;
+    width: auto;
+    height: auto;
+
+    display: flex;
+    flex-direction: column;
 }
 
 .form-group
 {
     width: 100%;
-    margin-top: 20px; 
-    font-size: 20px;
     display: flex;
-    justify-content:center;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 #recipient_phone{
-    margin-left: 10px;
+    width: 100%;
 }
 
 #message{
-    margin-left: 10px;
+    max-height: 150px;
+    width: 100%;
+}
+
+#message-button {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#charcount-container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 .label{
