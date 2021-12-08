@@ -9,12 +9,7 @@ Send Message
     <meta charset ="UTF-8">
     <meta name="viewport" content="width=device-width, initial scale=1.0">
     <title>Send Nessage</title>
-    <script>
-        function charcountupdate(str){
-            var lng = str.length;
-            document.getElementById("charcount").innerHTML = lng +' out of 100 characters';
-        }        
-    </script>
+
     <script>
         function toggleImg(x) {
             if(x.src.includes('button.png')) {
@@ -31,17 +26,17 @@ Send Message
             <form action="/message" method="POST">
 
                 <div class="form-group">
-                    <label for="recipient_phone"> Phone Number</label>
+                    <label for="recipient_phone"> Recipient's Phone Number</label>
                     <input type="text" id="recipient_phone" name="recipient_phone">
                 </div>
 
                 <div class="form-group">
                     <label for = "message"> Message </label>
-                    <textarea name="message" id="message" placeholder="max. 100 characters" maxlength = "100" onekeyup="charcountupdate(this.value)" cols="30" rows="10"></textarea>
+                    <textarea name="message" id="message" placeholder="Max 30 characters. Remember to type your name :)" maxlength = "30" cols="30" rows="10"></textarea>
+                    <h6>30 characters limit</h6>
                 </div>
-                <div id="charcount-container">
-                    <h5 id = "charcount"> words left</h5>
-                </div>
+
+
                 <div id="message-button">
                     <button type="submit" style="height: 200px; width: 200px; padding: 0; border: none; background: none;">
                         <img style="height: 200px; width: 200px;" src="{{ url_for('static', filename='images/button.png') }}" onmouseenter="toggleImg(this)" onmouseout="toggleImg(this)">

@@ -1,4 +1,5 @@
 import json
+import os
 
 from app.helper import apology, login_required
 from app.models import User, db
@@ -9,6 +10,8 @@ from twilio.rest import Client
 from werkzeug.security import check_password_hash, generate_password_hash
 
 main = Blueprint("main", __name__)  # initialize blueprint
+twilio_sid = "AC7e0d1d4fc254d789473b7f8229ffa74e"
+twilio_secret = "6350511dc5f11c56fcc24d77d53ae36a" 
 
 @main.route("/")
 def index(): 
@@ -22,11 +25,11 @@ def message():
     if request.method == "POST":
         if not request.form.get("recipient_phone"):
             return apology("must provide phone number")
+        if not request.form.get("recipient_phone").isdecimal():
+            return apology("must be real number")
         elif not request.form.get("message"):
              return apology("must provide a message")
 
-        twilio_sid = "AC7e0d1d4fc254d789473b7f8229ffa74e"
-        twilio_secret = "6350511dc5f11c56fcc24d77d53ae36a"        
         client = Client(twilio_sid, twilio_secret)
 
         my_phone = '+17313180503'
@@ -81,6 +84,9 @@ def register():
 
         if phone is None:
             return apology("provide a phone")
+        for s in phone:
+            if not s.isdigit():
+                return apology ("must be real number")
         if password is None:
             return apology("provide a password")
         if confirm is None:
@@ -106,3 +112,20 @@ def logout():
     session.clear()
     return redirect("/")
 
+@main.route("/past")
+@login_required
+def past():
+    client = Client(twilio_sid, twilio_secret)
+
+    messages = client.messages.list(limit=8)
+
+    x = []
+    
+    for record in messages:
+        d = dict()
+        d['body'] = record.body.split(' - ')[1]
+        d['to'] = record.to
+        x.append(d)
+    print(x)
+    
+    return render_template('past.html', messages=x)
